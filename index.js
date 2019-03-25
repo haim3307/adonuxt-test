@@ -20,12 +20,12 @@ const express = require('express')
 const app = express()
 const { Ignitor } = require('@adonisjs/ignitor')
 
-app.get('*', (req, res) => {
-  new Ignitor(require('@adonisjs/fold'))
+app.get('*', async (req, res) => {
+  await new Ignitor(require('@adonisjs/fold'))
   .appRoot(__dirname)
   .fireHttpServer()
-  .then(() => {
-    return res.write(use('App/Services/Nuxt').build())
+  .then(async () => {
+    await res.write(use('App/Services/Nuxt').build())
   })
   .then(() => {
     use('Logger').info('Nuxt is ready to handle requests')

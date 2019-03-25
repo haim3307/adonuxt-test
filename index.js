@@ -19,7 +19,7 @@
 
 const { Ignitor } = require('@adonisjs/ignitor')
 
-export default new Ignitor(require('@adonisjs/fold'))
+new Ignitor(require('@adonisjs/fold'))
   .appRoot(__dirname)
   .fireHttpServer()
   .then(() => {

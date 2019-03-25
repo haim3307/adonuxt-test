@@ -11,7 +11,7 @@
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "node ./ace nuxtbuild",
     "now-build": "npm run build",
-    "start": "cross-env NODE_ENV=production ENV=./.env node server.js",
+    "start": "cross-env NODE_ENV=production node server.js",
     "precommit": "npm run lint",
     "lint": "standard && eslint --ext .js,.vue resources/"
   },
@@ -50,5 +50,8 @@
     "eslint-plugin-standard": "^2.3.1",
     "nodemon": "^1.11.0",
     "standard": "^8.6.0"
+  },
+  "engines": {
+    "node": "10.13.0"
   }
 }

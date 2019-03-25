@@ -16,27 +16,21 @@
 |     Also you can preload files by calling `preLoad('path/to/file')` method.
 |     Make sure to pass relative path from the project root.
 */
-/*
-
+const express = require('express')
+const app = express()
 const { Ignitor } = require('@adonisjs/ignitor')
 
-new Ignitor(require('@adonisjs/fold'))
+app.get('*', (req, res) => {
+  new Ignitor(require('@adonisjs/fold'))
   .appRoot(__dirname)
   .fireHttpServer()
   .then(() => {
-    return use('App/Services/Nuxt').build()
+    return res.write(use('App/Services/Nuxt').build())
   })
   .then(() => {
     use('Logger').info('Nuxt is ready to handle requests')
   })
   .catch(console.error)
-*/
-
-
-const express = require('express')
-const app = express()
-
-app.get('*', (req, res) => {
   res.write('<h1><marquee direction=right>Hello from Express path `/` on Now 2.0!</marquee></h1>')
   res.write('<h2>Go to <a href="/about">/about</a></h2>')
   res.end()

@@ -19,28 +19,13 @@
 
 const { Ignitor } = require('@adonisjs/ignitor')
 
-const httpServer = new Ignitor(require('@adonisjs/fold')).appRoot(__dirname)
-
-httpServer.fireHttpServer()
+new Ignitor(require('@adonisjs/fold'))
+  .appRoot(__dirname)
+  .fireHttpServer()
   .then(() => {
-    use('App/Services/Nuxt').build()
+    return use('App/Services/Nuxt').build()
   })
   .then(() => {
     use('Logger').info('Nuxt is ready to handle requests')
   })
   .catch(console.error)
-/**
- *   .appRoot(__dirname)
- .fireHttpServer()
- */
-/**
- *   .then(() => {
-    return use('App/Services/Nuxt').build()
-  })
- .then(() => {
-    use('Logger').info('Nuxt is ready to handle requests')
-  })
- .catch(console.error)
- */
-
-module.exports = httpServer

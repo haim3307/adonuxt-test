@@ -9,7 +9,6 @@
   "scripts": {
     "serve:dev": "npm run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
-    "build": "node ./ace nuxtbuild",
     "start": "npm run dev",
     "precommit": "npm run lint",
     "lint": "standard && eslint --ext .js,.vue resources/",

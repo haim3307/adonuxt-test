@@ -9,6 +9,7 @@
   "scripts": {
     "serve:dev": "npm run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node --inspect server.js",
+    "heroku-prebuild": "nuxt build --prod",
     "start": "node --inspect server.js",
     "precommit": "npm run lint",
     "lint": "standard && eslint --ext .js,.vue resources/",

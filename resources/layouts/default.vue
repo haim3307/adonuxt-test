@@ -443,5 +443,58 @@
   font-style: initial;
 }
 </style>
-<script lang="ts" src="./default.ts"></script>
+<script>
+  import QuickItemModal from "~/components/modals/QuickItemModal";
+  export default {
+    components: { QuickItemModal },
+    methods:{
+      setBreadcrumbs() {
+        const nuxtRoute = this.$router.currentRoute;
+        let currentPath = nuxtRoute.path;
+        let paths = currentPath.match(/[^/].*[^/]/g);
+
+        function setBreadCrumb(paths) {
+          paths = Array.isArray(paths) && paths.length ? paths[0].split("/") : [];
+          let beforePath;
+          return paths.reduce((breadcrumbArray, path, idx) => {
+            beforePath = breadcrumbArray
+              .slice(0, idx)
+              .reduce((sum, item) => sum += `/${item.path}`, "");
+            breadcrumbArray.push({
+              path: path,
+              to: breadcrumbArray[idx - 1] ? beforePath + "/" + path : "/" + path,
+              text: path.replace("-", " ")
+            });
+
+            /*this.$route.matched[idx].meta.breadCrumb ||*/
+            return breadcrumbArray;
+          }, []);
+        }
+        this.breadcrumbs = setBreadCrumb(paths);
+      },
+      logout()
+      {
+        this.$store.dispatch('logout');
+      }
+    },
+    computed:{
+      initialData()
+      {
+        return this.$store.state.initialData;
+      },
+
+      is_logged_in()
+      {
+        return this.$store.state.initialData.is_logged_in;
+      }
+    },
+    data(){
+      return {
+        breadcrumbs:[]
+      }
+    }
+  }
+  /*    @Watch("$route.fullPath", {deep: true,immediate: true})*/
+
+</script>
 

@@ -54,7 +54,19 @@
     "vue-social-sharing": "^2.4.2",
     "vue2-filters": "^0.5.1",
     "vuex": "^3.1.0",
-    "youch": "^2.0.4"
+    "youch": "^2.0.4",
+
+    "babel-eslint": "^7.1.1",
+    "eslint": "^3.13.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-html": "^2.0.0",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^2.3.1",
+    "nodemon": "^1.11.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
+    "ts-loader": "5.3.3",
+    "typescript": "3.2.4"
   },
   "standard": {
     "global": [
@@ -66,18 +78,7 @@
     "App": "./app"
   },
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "eslint": "^3.13.1",
-    "eslint-config-standard": "^6.2.1",
-    "eslint-plugin-html": "^2.0.0",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^2.3.1",
-    "nodemon": "^1.11.0",
-    "standard": "^8.6.0",
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
-    "ts-loader": "5.3.3",
-    "typescript": "3.2.4"
+
   },
   "engines": {
     "node": "10.13.0"

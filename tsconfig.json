@@ -4,7 +4,8 @@
     "target": "es5",
     "lib": [
       "dom",
-      "es2015"
+      "es2015",
+      "dom"
     ],
     "module": "es2015",
     "moduleResolution": "node",
@@ -17,16 +18,49 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "paths": {
-      "~/": ["./"],
-      "~/assets/*": ["./assets/*"],
-      "~/components/*": ["./components/*"],
-      "~/middleware/*": ["./middleware/*"],
-      "~/pages/*": ["./pages/*"],
-      "~/plugins/*": ["./plugins/*"],
-      "~/static/*": ["./static/*"],
-      "~/store": ["./.nuxt/store"],
-      "~/router": ["./.nuxt/router"]
+      "~/": [
+        "./"
+      ],
+      "~/assets/*": [
+        "./assets/*"
+      ],
+      "~/components/*": [
+        "./components/*"
+      ],
+      "~/middleware/*": [
+        "./middleware/*"
+      ],
+      "~/pages/*": [
+        "./pages/*"
+      ],
+      "~/plugins/*": [
+        "./plugins/*"
+      ],
+      "~/static/*": [
+        "./static/*"
+      ],
+      "~/store": [
+        "./.nuxt/store"
+      ],
+      "~/router": [
+        "./.nuxt/router"
+      ],
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ]
     },
-    "strictFunctionTypes": false
+    "strictFunctionTypes": false,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "types": [
+      "@types/node",
+      "@nuxt/vue-app"
+    ],
+    "strictPropertyInitialization": false
   }
 }

@@ -9,7 +9,7 @@
   "scripts": {
     "serve:dev": "npm run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node --inspect server.js",
-    "build": "ENV_SILENT=true node --optimize_for_size --max_old_space_size=300 --gc_interval=100 ./ace nuxtbuild",
+    "build": "ENV_SILENT=true node ./ace nuxtbuild",
     "start": "node --inspect server.js",
     "precommit": "npm run lint",
     "lint": "standard && eslint --ext .js,.vue resources/",

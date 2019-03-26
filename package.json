@@ -9,9 +9,8 @@
   "scripts": {
     "serve:dev": "npm run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
-    "heroku-postbuild": "nuxt build",
     "build": "node ./ace nuxtbuild",
-    "start": "cross-env NODE_ENV=production node --optimize_for_size server.js",
+    "start": "cross-env NODE_ENV=production node server.js",
     "precommit": "npm run lint",
     "lint": "standard && eslint --ext .js,.vue resources/"
   },

@@ -1,10 +1,9 @@
 // @ts-ignore
 import QuickItemModal from "~/components/modals/QuickItemModal";
-import NuxtLoader from "./nuxt-loading.vue";
 import {Route} from 'vue-router';
 import {Component, Vue, Watch} from "nuxt-property-decorator";
 @Component({
-  components: { QuickItemModal,NuxtLoader }
+  components: { QuickItemModal }
 })
 export default class extends Vue {
   $route: Route;

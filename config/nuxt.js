@@ -50,8 +50,7 @@ module.exports = {
     { src: '~/plugins/global.js' },
     { src: '~/plugins/injectDataFromServer.js' },
     { src: '~plugins/ion-range-slider.js', ssr: false },
-    '~/plugins/vue2-filters'
-
+    { src: '~/plugins/vue2-filters.js' }
   ],
   /*
   ** Nuxt.js modules

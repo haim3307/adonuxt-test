@@ -10,9 +10,10 @@
     "serve:dev": "npm run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "node ./ace nuxtbuild",
-    "start": "cross-env NODE_ENV=production node server.js",
+    "start": "node server.js",
     "precommit": "npm run lint",
-    "lint": "standard && eslint --ext .js,.vue resources/"
+    "lint": "standard && eslint --ext .js,.vue resources/",
+    "test-prod-start": "npm run build && npm run start"
   },
   "dependencies": {
     "@adonisjs/ace": "^5.0.8",

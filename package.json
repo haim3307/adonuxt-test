@@ -8,8 +8,8 @@
   "main": "server.js",
   "scripts": {
     "serve:dev": "npm run dev",
-    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
-    "start": "npm run dev",
+    "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node --inspect server.js",
+    "start": "node --inspect server.js",
     "precommit": "npm run lint",
     "lint": "standard && eslint --ext .js,.vue resources/",
     "test-prod-start": "npm run build && npm run start"

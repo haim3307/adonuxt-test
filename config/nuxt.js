@@ -80,15 +80,6 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    proxy: true
-  },
-  proxy: {
-    '/api/': {
-      target: process.env.API_URL || 'http://localhost:3333',
-      pathRewrite: { '^/api/': '' },
-      'secure': false,
-      changeOrigin: true
-    }
   },
   /*
   ** Build configuration

@@ -10,7 +10,7 @@
     "serve:dev": "npm run dev",
     "dev": "nodemon --watch app --watch bootstrap --watch config --watch .env -x node server.js",
     "build": "node ./ace nuxtbuild",
-    "now-build": "npm run build",
+    "heroku-postbuild": "npm run build",
     "start": "cross-env NODE_ENV=production node server.js",
     "precommit": "npm run lint",
     "lint": "standard && eslint --ext .js,.vue resources/"

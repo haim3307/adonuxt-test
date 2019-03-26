@@ -1,0 +1,84 @@
+.diamond-loader {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 1em;
+  height: 1em;
+  -moz-box-shadow: inset 0 0 0 0.16667em #000000;
+  -webkit-box-shadow: inset 0 0 0 0.16667em #000000;
+  box-shadow: inset 0 0 0 0.16667em #000000;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
+.diamond-loader:before {
+  -moz-box-shadow: inset 0 0 0 0.08333em #000000;
+  -webkit-box-shadow: inset 0 0 0 0.08333em #000000;
+  box-shadow: inset 0 0 0 0.08333em #000000;
+  -moz-animation: moving-before 1.5s linear infinite;
+  -webkit-animation: moving-before 1.5s linear infinite;
+  animation: moving-before 1.5s linear infinite; }
+
+.diamond-loader:after {
+  -moz-box-shadow: inset 0 0 0 0.08333em #000000;
+  -webkit-box-shadow: inset 0 0 0 0.08333em #000000;
+  box-shadow: inset 0 0 0 0.08333em #000000;
+  -moz-animation: moving-after 1.5s linear infinite;
+  -webkit-animation: moving-after 1.5s linear infinite;
+  animation: moving-after 1.5s linear infinite; }
+
+.diamond-loader:before, .diamond-loader:after {
+  content: "";
+  display: block;
+  width: 0.6em;
+  height: 0.6em;
+  position: absolute; }
+
+@-moz-keyframes moving-before {
+  0%, 100% {
+    top: 0.6em;
+    left: -0.2em; }
+  50% {
+    top: -0.2em;
+    left: .6em; } }
+
+@-webkit-keyframes moving-before {
+  0%, 100% {
+    top: 0.6em;
+    left: -0.2em; }
+  50% {
+    top: -0.2em;
+    left: .6em; } }
+
+@keyframes moving-before {
+  0%, 100% {
+    top: 0.6em;
+    left: -0.2em; }
+  50% {
+    top: -0.2em;
+    left: .6em; } }
+
+@-moz-keyframes moving-after {
+  0%, 100% {
+    top: -0.2em;
+    left: .6em; }
+  50% {
+    top: 0.6em;
+    left: -0.2em; } }
+
+@-webkit-keyframes moving-after {
+  0%, 100% {
+    top: -0.2em;
+    left: .6em; }
+  50% {
+    top: 0.6em;
+    left: -0.2em; } }
+
+@keyframes moving-after {
+  0%, 100% {
+    top: -0.2em;
+    left: .6em; }
+  50% {
+    top: 0.6em;
+    left: -0.2em; } }

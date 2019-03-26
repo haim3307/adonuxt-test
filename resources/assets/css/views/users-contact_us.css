@@ -1,0 +1,102 @@
+/*== Contact Page Content Start ==*/
+.contact-method-wrap {
+  margin-top: -30px; }
+  .contact-method-wrap .contact-method-item {
+    margin-top: 30px; }
+    .contact-method-wrap .contact-method-item:hover .method-icon:before {
+      -webkit-animation: ripple 1s infinite;
+      animation: ripple 1s infinite; }
+    .contact-method-wrap .contact-method-item .method-icon {
+      background-color: #4d94db;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      font-size: 3rem;
+      line-height: 80px;
+      color: #fff;
+      display: block;
+      text-align: center;
+      margin: auto;
+      margin-bottom: 25px;
+      position: relative;
+      height: 80px;
+      width: 80px; }
+      .contact-method-wrap .contact-method-item .method-icon:before {
+        background-color: #4d94db;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        -webkit-transform: scale(0);
+        -moz-transform: scale(0);
+        -ms-transform: scale(0);
+        transform: scale(0);
+        display: block;
+        height: 100%;
+        width: 100%;
+        z-index: -1; }
+    .contact-method-wrap .contact-method-item .method-info {
+      font-size: 1.5rem;
+      line-height: 1.5; }
+      .contact-method-wrap .contact-method-item .method-info h3 {
+        color: #202020;
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        line-height: 1.5;
+        font-family: "Montserrat";
+        margin-bottom: 10px; }
+      .contact-method-wrap .contact-method-item .method-info a {
+        color: #727272;
+        display: block; }
+
+@keyframes ripple {
+  0%, 35% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.8; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
+
+@-webkit-keyframes ripple {
+  0%, 35% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1; }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    opacity: 0.8; }
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(2);
+    transform: scale(2); } }
+
+.contact-form-wrap {
+  margin-top: 60px; }
+  .contact-form-wrap h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: 3.2rem;
+    line-height: 1.5; }
+    @media only screen and (min-width: 320px) and (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px) {
+      .contact-form-wrap h2 {
+        font-size: 2.2rem;
+        line-height: 1.5; } }
+  .contact-form-wrap .alert {
+    margin-bottom: 0;
+    margin-top: 15px;
+    text-align: center; }
+  .contact-form-wrap .btn-add-to-cart {
+    margin-top: 15px; }
+
+/*== Contact Page Content End ==*/

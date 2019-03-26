@@ -1,0 +1,19 @@
+@import "../pages/page-imports";
+@import "../pages/cart";
+.propValue{
+  /*
+  color: lightgrey;
+  */
+}
+.product-desc-table{
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+  li{
+    font-size: 12px;
+    .propValue{
+      color: #727272;
+    }
+  }
+}

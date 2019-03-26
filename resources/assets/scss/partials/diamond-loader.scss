@@ -1,0 +1,135 @@
+$loaderColor: $brand-color;
+.diamond-loader {
+  font-size: 138px;
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 1em;
+  height: 1em;
+  -moz-box-shadow: inset 0 0 0 0.16667em $loaderColor;
+  -webkit-box-shadow: inset 0 0 0 0.16667em $loaderColor;
+  box-shadow: inset 0 0 0 0.16667em $loaderColor;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.diamond-loader:before {
+  -moz-box-shadow: inset 0 0 0 0.08333em $loaderColor;
+  -webkit-box-shadow: inset 0 0 0 0.08333em $loaderColor;
+  box-shadow: inset 0 0 0 0.08333em $loaderColor;
+  -moz-animation: moving-before 1.5s linear infinite;
+  -webkit-animation: moving-before 1.5s linear infinite;
+  animation: moving-before 1.5s linear infinite;
+}
+.diamond-loader:after {
+  -moz-box-shadow: inset 0 0 0 0.08333em $loaderColor;
+  -webkit-box-shadow: inset 0 0 0 0.08333em $loaderColor;
+  box-shadow: inset 0 0 0 0.08333em $loaderColor;
+  -moz-animation: moving-after 1.5s linear infinite;
+  -webkit-animation: moving-after 1.5s linear infinite;
+  animation: moving-after 1.5s linear infinite;
+}
+.diamond-loader:before, .diamond-loader:after {
+  content: "";
+  display: block;
+  width: 0.6em;
+  height: 0.6em;
+  position: absolute;
+}
+
+@-moz-keyframes moving-before {
+  0%,100% {
+    top: 0.6em;
+    left: -0.2em;
+  }
+  50% {
+    top: -0.2em;
+    left: .6em;
+  }
+}
+@-webkit-keyframes moving-before {
+  0%,100% {
+    top: 0.6em;
+    left: -0.2em;
+  }
+  50% {
+    top: -0.2em;
+    left: .6em;
+  }
+}
+@keyframes moving-before {
+  0%,100% {
+    top: 0.6em;
+    left: -0.2em;
+  }
+  50% {
+    top: -0.2em;
+    left: .6em;
+  }
+}
+@-moz-keyframes moving-after {
+  0%,100% {
+    top: -0.2em;
+    left: .6em;
+  }
+  50% {
+    top: 0.6em;
+    left: -0.2em;
+  }
+}
+@-webkit-keyframes moving-after {
+  0%,100% {
+    top: -0.2em;
+    left: .6em;
+  }
+  50% {
+    top: 0.6em;
+    left: -0.2em;
+  }
+}
+@keyframes moving-after {
+  0%,100% {
+    top: -0.2em;
+    left: .6em;
+  }
+  50% {
+    top: 0.6em;
+    left: -0.2em;
+  }
+}
+
+   /* loader  */
+ .lds-ripple {
+   display: inline-block;
+   position: relative;
+   width: 64px;
+   height: 64px;
+ }
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid $brand-color;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 28px;
+    left: 28px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -1px;
+    left: -1px;
+    width: 58px;
+    height: 58px;
+    opacity: 0;
+  }
+}
+/* !loader  */

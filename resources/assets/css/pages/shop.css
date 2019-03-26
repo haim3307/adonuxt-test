@@ -1,0 +1,54 @@
+/*== Shop Page Content Start ==*/
+.shop-page-content-wrap .products-settings-option {
+  border: 1px solid #dfdfdf;
+  padding: 10px 15px;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -ms-flex-pack: space-between;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .shop-page-content-wrap .products-settings-option .show-items {
+    font-family: "Droid Serif";
+    font-size: 1.6rem; }
+
+.shop-page-products-wrap {
+  margin: 20px 0 50px; }
+  .shop-page-products-wrap .products-wrapper.products-gird {
+    margin-top: 0; }
+  .shop-page-products-wrap .single-product-item {
+    margin-top: 30px; }
+
+.product-view {
+  margin-right: 20px; }
+  .product-view li {
+    background-color: #fff;
+    font-size: 2rem;
+    outline: 1px solid #c5c5c5;
+    padding: 3px 10px;
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease-out;
+    -moz-transition: all 0.4s ease-out;
+    -o-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out; }
+    .product-view li.current {
+      color: #d82e2e; }
+    .product-view li .fa-bars {
+      padding-top: 1px; }
+
+.product-sort_by label, .product-per-page label {
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin: 0;
+  margin-right: 10px; }
+
+.product-per-page .nice-select {
+  width: 60px; }
+
+/*== Shop Page Content End ==*/

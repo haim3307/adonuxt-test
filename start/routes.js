@@ -21,7 +21,7 @@ const Helpers = use('Helpers')
 
 Route.group(() => {
   Route.get('/global', () => {
-    return Drive.get(Helpers.appRoot('storage/cached-responses/global.json'))
+    return Drive.get(Helpers.appRoot('./storage/cached-responses/global.json'))
   })
   Route.get('/main/index.json', () => {
     return Drive.get(Helpers.appRoot('storage/cached-responses/main-index.json'))

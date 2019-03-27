@@ -23,14 +23,15 @@ Route.group(() => {
   Route.get('/main/index.json', () => {
     return Drive.get('../resources/cached-responses/main-index.json')
   })
-  Route.get('/dyo/diamond', () => {
+  Route.get('/dyo/diamond/:filter?', () => {
     return Drive.get('../resources/cached-responses/dyo-diamond.json')
   })
   Route.get('/diamonds', () => {
     return Drive.get('../resources/cached-responses/dyo-diamond.json')
   })
-  Route.get('/dyo/color_diamond', () => {
+  Route.get('/dyo/color_diamond/:filter?', () => {
     return Drive.get('../resources/cached-responses/dyo-color_diamond.json')
   })
-}).prefix('api')
+}
+).prefix('api')
 Route.any('*', 'NuxtController.render')

@@ -5,6 +5,10 @@ const pkg = require('../package')
 const webpack = require('webpack')
 
 module.exports = {
+  /*
+  ** Point to resources
+  */
+  srcDir: resolve(__dirname, '..', 'resources'),
   server: {
     port: 3000 // default: 3000
   },
@@ -30,9 +34,7 @@ module.exports = {
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js', ssr: false },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/popper.min.js', ssr: false },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js', ssr: false },
-      { src: 'https://code.iconify.design/1/1.0.0-rc7/iconify.min.js', ssr: false },
-      { src: '/js/plugins.min.js', ssr: false },
-      { src: '/js/active.js', ssr: false }
+      { src: 'https://code.iconify.design/1/1.0.0-rc7/iconify.min.js', ssr: false }
     ]
   },
   /*
@@ -164,8 +166,4 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: { color: '#4d94db' },
-  /*
-  ** Point to resources
-  */
-  srcDir: resolve(__dirname, '..', 'resources')
 }

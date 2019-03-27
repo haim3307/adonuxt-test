@@ -26,10 +26,10 @@ module.exports = {
       }
     ],
     script: [
-      { src: '/js/vendor/jquery-3.3.1.js', ssr: false },
-      { src: '/js/vendor/jquery-migrate-1.4.1.min.js', ssr: false },
-      { src: '/js/vendor/popper.min.js', ssr: false },
-      { src: '/js/vendor/bootstrap.min.js', ssr: false },
+      { src: 'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', ssr: false },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.0.1/jquery-migrate.min.js', ssr: false },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/popper.min.js', ssr: false },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js', ssr: false },
       { src: 'https://code.iconify.design/1/1.0.0-rc7/iconify.min.js', ssr: false },
       { src: '/js/plugins.min.js', ssr: false },
       { src: '/js/active.js', ssr: false }

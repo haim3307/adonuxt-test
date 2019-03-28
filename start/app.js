@@ -19,7 +19,8 @@ const providers = [
   '@adonisjs/shield/providers/ShieldProvider',
   '@adonisjs/session/providers/SessionProvider',
   '@adonisjs/auth/providers/AuthProvider',
-  '@adonisjs/drive/providers/DriveProvider'
+  '@adonisjs/drive/providers/DriveProvider',
+  'lucid-mongo/providers/LucidMongoProvider'
 ]
 
 /*
@@ -32,6 +33,7 @@ const providers = [
 |
 */
 const aceProviders = [
+  'lucid-mongo/providers/MigrationsProvider',
   '@adonisjs/lucid/providers/MigrationsProvider'
 ]
 

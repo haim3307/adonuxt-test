@@ -25,7 +25,7 @@ module.exports = {
   |
   */
   session: {
-    serializer: 'lucid',
+    serializer: 'LucidMongo',
     model: 'App/Models/User',
     scheme: 'session',
     uid: 'email',
@@ -46,7 +46,7 @@ module.exports = {
   |
   */
   basic: {
-    serializer: 'lucid',
+    serializer: 'LucidMongo',
     model: 'App/Models/User',
     scheme: 'basic',
     uid: 'email',
@@ -63,13 +63,24 @@ module.exports = {
   |
   */
   jwt: {
-    serializer: 'lucid',
+    serializer: 'LucidMongo',
     model: 'App/Models/User',
+    token: 'App/Models/Token',
     scheme: 'jwt',
     uid: 'email',
     password: 'password',
+    expiry: '20m',
     options: {
       secret: 'self::app.appKey'
     }
+  },
+  api: {
+    serializer: 'LucidMongo',
+    scheme: 'api',
+    model: 'App/Models/User',
+    token: 'App/Models/Token',
+    uid: 'username',
+    password: '',
+    expiry: '30d'
   }
 }

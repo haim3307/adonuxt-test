@@ -273,7 +273,6 @@ font-size: 12px;"></b-form-select>
             };
         },
         async asyncData ({ $axios,query,route}) {
-            process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
             let data = await $axios.$get(`/api/dyo/${route.params.type === 'fancy'?'color_':''}diamond${'filter' in route.params && route.params.filter?'/'+route.params.filter:''}`,    {params:query});
 
             console.log('aaaaa',data,query);

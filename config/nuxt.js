@@ -81,6 +81,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: process.env.NODE_ENV !== 'production' ? 'http://localhost:3001' : 'https://diamond-adonuxt.herokuapp.com'
   },
   /*
   ** Build configuration
@@ -165,5 +166,5 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#4d94db' },
+  loading: { color: '#4d94db' }
 }

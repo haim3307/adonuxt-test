@@ -12,14 +12,10 @@ const config = {
   actions: {
     async nuxtServerInit ({ commit }, store) {
       const { app, $axios } = store
-
       console.log(Object.keys(store))
       const data = await $axios.$get('/api/global')
-      //console.log(data);
       console.log('start : app.router', app.router.history.current.path, 'end : app.router')
       commit('setInitialData', data)
-
-      /*commit('setBreadCrumb',paths);*/
     },
     saveToCart ({ state }, product, element) {
       this.$axios(`/api/cart/add/product_id/${product.id}.json?no-redirect=1`)
@@ -31,8 +27,7 @@ const config = {
               $('.mini-cart').removeClass('hover')
             }, 3 * 1000)
             state.initialData.orderItems.push(product)
-            if ('seo' in this && 'cart' in this.seo)
-              window.location = this.seo.cart
+            if ('seo' in this && 'cart' in this.seo) { window.location = this.seo.cart }
           }
         })
 
@@ -46,12 +41,12 @@ const config = {
     logout ({ commit }, id) {
       this.$axios.$post('/api/users/logout_post')
       commit('setLogout')
-
     },
     register ({ commit }, data) {
       return new Promise(async (resolve, reject) => {
         let result = await this.$axios.$post('/api/users/create_post.json', data)
         debugger
+
         if (result.status) {
           commit('setLogin', true)
           resolve()

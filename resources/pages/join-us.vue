@@ -9,28 +9,16 @@
       data-vv-scope="reg_form"
     >
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-12">
           <single-input-item
-            label="First Name"
-            name="bill_first_name"
+            label="Full Name"
+            name="name"
             validate="required"
             mode
             :delay="1000"
             @input="onInput"
           ></single-input-item>
         </div>
-        <div class="col-md-6">
-          <single-input-item
-            label="Last Name"
-            name="bill_last_name"
-            validate="required"
-            mode
-            :delay="1000"
-            @input="onInput"
-          ></single-input-item>
-        </div>
-      </div>
-      <div class="row">
         <div class="col-12">
           <single-input-item
             label="Email Address"

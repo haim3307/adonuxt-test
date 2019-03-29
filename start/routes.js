@@ -33,6 +33,16 @@ Route.group(() => {
   Route.get('/dyo/color_diamond/:filter?', () => {
     return Drive.get('../storage/cached-responses/dyo-color_diamond.json')
   })
+  Route.get('users/all', 'ApiController.getUsers')
+  Route
+    .post('login', 'AuthController.login')
+    .middleware('guest')
+  Route
+    .post('signup', 'AuthController.signup')
+    .middleware('guest')
+  Route
+    .get('users/:id', 'AuthController.show')
+    .middleware('auth')
 }
 ).prefix('api')
 Route.any('*', 'NuxtController.render')

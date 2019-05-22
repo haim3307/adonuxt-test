@@ -12,9 +12,9 @@ const config = {
   actions: {
     async nuxtServerInit ({ commit }, store) {
       const { app, $axios } = store
-      console.log(Object.keys(store))
+      // console.log(Object.keys(store))
       const data = await $axios.$get('/api/global')
-      console.log('start : app.router', app.router.history.current.path, 'end : app.router')
+      // console.log('start : app.router', app.router.history.current.path, 'end : app.router')
       commit('setInitialData', data)
     },
     saveToCart ({ state }, product, element) {

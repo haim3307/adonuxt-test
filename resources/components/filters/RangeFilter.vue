@@ -84,7 +84,7 @@
               $el.update({to_pretty});
             },
             handleKeyUp(data)
-            {debugger;this;
+            {
                 var searchParams = this.source.queryParams.q;
 
                 var fromQueryString = this.title in searchParams ? searchParams[this.title].split('-') : false;

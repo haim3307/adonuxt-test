@@ -120,7 +120,7 @@
           return decodeURI(results[1]) || 0;
         };
 
-        function onFilterFinish(filter, data) {debugger;this;
+        function onFilterFinish(filter, data) {
           var searchParams = pureCarat.queryParams.q;
           data.from = data.from_pretty;
           data.to = data.to_pretty;
@@ -144,7 +144,7 @@
                         step: 1,            // default 1 (set step)
             */
             grid: true,
-            prettify: function (n) {
+/*            prettify: function (n) {
               // current position
               //debugger;
               var position = Math.floor(n / this.max * 100);
@@ -166,12 +166,12 @@
                 n = n.toFixed(2);
               }
               else {
-                n =Math.floor(n);
+                n = Math.floor(n);
               }
               //debugger;
 
               return n;
-            },
+            },*/
             onStart(data) {
               // fired then range slider is ready
             },
@@ -181,16 +181,24 @@
             },
             onFinish(data) {
               // fired on pointer release
+              console.log('filter data:',data);
+
               if (firstFilters.indexOf(val) === -1) {
                 var toQueryParam = '';
-                if (!('fairToFinest' in key) && !('range-filter' in key)) {
-                  data.from = pureCarat[val + 'RangeSlider'].maxValue - data.from;
-                  data.to = pureCarat[val + 'RangeSlider'].maxValue - data.to;
-                  toQueryParam = rangeQueryParam(data);
-                } else if (!('range-filter' in key) || 'noneToVeryStrong' in key) {
-                  data.from = [data.to + pureCarat[val + 'RangeSlider'].minValue, data.to = data.from + pureCarat[val + 'RangeSlider'].minValue][0];
-                  toQueryParam = rangeQueryParam(data);
-                } else {
+                // if (!('fairToFinest' in key) && !('range-filter' in key)) {
+                //   data.from = pureCarat[val + 'RangeSlider'].maxValue - data.from;
+                //   data.to = pureCarat[val + 'RangeSlider'].maxValue - data.to;
+                //   toQueryParam = rangeQueryParam(data);
+                // } else if (!('range-filter' in key) || 'noneToVeryStrong' in key) {
+                //   data.from = [data.to + pureCarat[val + 'RangeSlider'].minValue, data.to = data.from + pureCarat[val + 'RangeSlider'].minValue][0];
+                //   toQueryParam = rangeQueryParam(data);
+                // } else {
+                //   toQueryParam = data.from + '-' + data.to;
+                // }
+                if ('alphabet-range-filter' in key){
+                  toQueryParam = data.from_value + '-' + data.to_value;
+                }
+                else {
                   toQueryParam = data.from + '-' + data.to;
                 }
                 pureCarat.loadGalleryData(val, toQueryParam);
@@ -205,10 +213,10 @@
           if ('steps' in this.source[val + 'RangeSlider']) {
             slider.values = this.source[val + 'RangeSlider'].steps;
           }
-          if ('grid_num' in this.source[val + 'RangeSlider']) {debugger;
+          if ('grid_num' in this.source[val + 'RangeSlider']) {
             slider.grid_num = this.source[val + 'RangeSlider'].grid_num;
           }
-          if ('step' in this.source[val + 'RangeSlider']) {debugger;
+          if ('step' in this.source[val + 'RangeSlider']) {
             slider.step = this.source[val + 'RangeSlider'].step;
           }
           $("." + val + "-range-slider").ionRangeSlider(slider);

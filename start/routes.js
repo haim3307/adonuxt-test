@@ -43,6 +43,7 @@ Route.group(() => {
   Route
     .get('users/:id', 'AuthController.show')
     .middleware('auth')
+  Route.get('gallery', 'GalleryController.index')
 }
 ).prefix('api')
 Route.any('*', 'NuxtController.render')

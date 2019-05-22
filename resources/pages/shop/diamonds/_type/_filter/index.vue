@@ -243,7 +243,7 @@ font-size: 12px;"></b-form-select>
 
         },
         head() {
-            console.log(this,'head');
+            // console.log(this,'head');
 /*            let breadcrumb =  this.$route.matched;
             console.log(breadcrumb,'breadcrumb');
             breadcrumb = breadcrumb.map(item => ({text:item,href:item}) );*/
@@ -273,9 +273,9 @@ font-size: 12px;"></b-form-select>
             };
         },
         async asyncData ({ $axios,query,route}) {
-            let data = await $axios.$get(`/api/dyo/${route.params.type === 'fancy'?'color_':''}diamond${'filter' in route.params && route.params.filter?'/'+route.params.filter:''}`,    {params:query});
+            let data = await $axios.$get(`/api/gallery/`,    {params:query});
 
-            console.log('aaaaa',data,query);
+            //console.log('aaaaa',data,query);
             return data;
         },
         methods:{
@@ -321,7 +321,7 @@ font-size: 12px;"></b-form-select>
                 if(prop === 'fancy_color') this.matchRouteAndFilterUrl(prop,'/shop/diamonds/fancy' ,queryString);
                 if(prop === 'shape') this.matchRouteAndFilterUrl(prop,'/shop/diamonds/loose' ,queryString);
 
-                this.$store.$axios.$get('/api/' + this.ajaxJsonUrl,{params}).then( (data) => {
+                this.$store.$axios.$get('/api/gallery/',{params}).then( (data) => {
                     this.products = data.products;
                     this.server = data.server;
                     this.ajaxDataStatus = 'loaded';

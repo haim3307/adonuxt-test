@@ -116,18 +116,18 @@ module.exports = {
   router: {
     extendRoutes (nuxtRoutes, resolve) {
       const routes = { ...require('../resources/pages/index.js') }
-      console.log('routes:', routes)
+      // console.log('routes:', routes)
 
       nuxtRoutes.forEach(nuxtRoute => {
-        console.log(nuxtRoute.name in routes, 'has', nuxtRoute.name)
-        console.log(nuxtRoute, 'meta:')
+        // console.log(nuxtRoute.name in routes, 'has', nuxtRoute.name)
+        // console.log(nuxtRoute, 'meta:')
 
         if (nuxtRoute.name in routes) {
           let route = routes[nuxtRoute.name]
           let overriddenRoute = {}
           switch (route.mode) {
             case 'replace':
-              console.log(resolve(__dirname, '..', 'resources', route.component), ':')
+              // console.log(resolve(__dirname, '..', 'resources', route.component), ':')
               overriddenRoute = {
                 name: nuxtRoute.name,
                 ...route,
@@ -145,7 +145,7 @@ module.exports = {
               break
 
           }
-          console.log(overriddenRoute, 'overriddenRoute')
+          // console.log(overriddenRoute, 'overriddenRoute')
 
           delete routes[nuxtRoute.name]
 
@@ -153,7 +153,7 @@ module.exports = {
         }
       })
 
-      console.log(routes, 'routes left')
+      // console.log(routes, 'routes left')
       Object.keys(routes).forEach(key => {
         nuxtRoutes.push({
           name: routes[key],

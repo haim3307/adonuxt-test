@@ -4,7 +4,7 @@
         <label :for="'p-' + product.id" class="single-product-item text-center w-100" @click="addToCartDash(this,product)" :class="{selectedDashItem:inDash}">
             <!--style="min-height: 283px;"-->
             <figure class="product-thumb animated fadeIn" v-show="imageStatus" style="display: none;">
-                <nuxt-link :to="product.url">
+                <nuxt-link :to="''">
                 <img class="img-fluid" :src="itemImage"  alt="" @error="itemImageHandler" @load="imageStatus = imageStatus == 'loaded' ? 'defaultLoaded' : 'loaded'">
                 </nuxt-link>
                 <figcaption
@@ -25,10 +25,10 @@
                 <div class="product-headline" style="margin: 0;">
                     <h2 class="d-block">
                         <a style="color: black;" :href="product.url">
-                        {{product.title}}
+                        {{parseFloat(product.carat).toFixed(2)}} carat {{product.shape}} diamond
                         </a>
                     </h2>
-                    <span class="price d-block" v-html="product.price" >{{product.price}}</span>
+                    <span class="price d-block" v-html="'$'+product.price">${{product.price}}</span>
                 </div>
                 <!--<div class="rating">
                     <i class="fa fa-star"></i>
@@ -47,12 +47,12 @@
                         <li class="color col"><span>shape</span>         <hr>{{product.shape}}</li>
                         <li class="color col"><span>symmetry</span>      <hr>{{product.symmetry}}</li>
                         <li class="color col"><span>polish</span>        <hr>{{product.polish}}</li>
-                        <li class="color col"><span>table</span>         <hr>{{product.table}}</li>
-                        <li class="color col"><span>depth</span>         <hr>{{product.depth}}</li>
+<!--                        <li class="color col"><span>table</span>         <hr>{{product.table}}</li>-->
+<!--                        <li class="color col"><span>depth</span>         <hr>{{product.depth}}</li>-->
                         <!--                            <li class="color col"><span>girdle</span>        <hr>{{product.girdle}}</li>
                         -->                         <li class="color col" v-if="product.culet"><span>culet</span>        <hr>{{product.culet}}</li>
-                        <li class="color col"><span>fluorescence</span>  <hr>{{product.fluorescence}}</li>
-                        <li class="color col"><span>measurements</span>  <hr>{{product.measurements}}</li>
+                        <li class="color col"><span>fluorescence</span>  <hr>{{product.fluorescent}}</li>
+                        <!-- <li class="color col"><span>measurements</span>  <hr>{{product.measurements}}</li>-->
                     </ul>
                 </div>
                 <div class="gallery-product-actions">
@@ -91,7 +91,7 @@
                                 <network network="googleplus" class="socialItem">
                                     <i class="fa fa-google-plus"/>
                                 </network>
-                                           
+
                             </div>
                         </social-sharing>
 
@@ -124,6 +124,7 @@
             }
         },
         created(){
+            this.product.default_img = 'https://diamanti.s3.amazonaws.com/images/diamond/182309-771.jpg';
             if(typeof this.product !== "undefined")
             {
                 this.itemImage = this.product.img;

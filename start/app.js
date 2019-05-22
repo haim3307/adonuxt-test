@@ -21,7 +21,8 @@ const providers = [
   '@adonisjs/session/providers/SessionProvider',
   '@adonisjs/auth/providers/AuthProvider',
   '@adonisjs/drive/providers/DriveProvider',
-  'lucid-mongo/providers/LucidMongoProvider'
+  'lucid-mongo/providers/LucidMongoProvider',
+  'adonis-mongoose-model/providers/MongooseProvider'
 ]
 
 /*
